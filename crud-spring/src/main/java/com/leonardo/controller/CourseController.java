@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 public class CourseController {
 
 	@Autowired
-	private CourseRepository courseRepository;
+	private final CourseRepository courseRepository;
 	
 	
 	@GetMapping
