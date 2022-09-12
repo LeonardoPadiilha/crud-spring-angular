@@ -30,13 +30,13 @@ export class CourseFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.form.value)
     this.service.save(this.form.value)
       .subscribe(result => this.onSuccess(), error => this.onError());
   }
 
   onCancel() {
-    this.location.back;
+    this.location.back();
+    console.log("clicou");
   }
 
   private onError() {
