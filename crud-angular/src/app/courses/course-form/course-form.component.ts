@@ -1,10 +1,10 @@
-import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Location } from '@angular/common';
 
 import { CoursesService } from './../services/courses.service';
+
 
 @Component({
   selector: 'app-course-form',
@@ -23,13 +23,14 @@ export class CourseFormComponent implements OnInit {
   ) {
     this.form = this.formBuilder.group({
       name: [null],
-      category: [null],
+      category: [null]
     });
   }
 
   ngOnInit(): void {}
 
   onSubmit() {
+    console.log(this.form.value)
     this.service.save(this.form.value)
       .subscribe(result => this.onSuccess(), error => this.onError());
   }
