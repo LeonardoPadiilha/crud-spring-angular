@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -29,12 +30,8 @@ export class CourseFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.form.value)
     this.service.save(this.form.value)
-    .subscribe(
-      (result) => this.onSuccess,
-      (error) => this.onError()
-    );
+      .subscribe(result => this.onSuccess(), error => this.onError());
   }
 
   onCancel() {
