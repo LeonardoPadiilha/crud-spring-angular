@@ -13,8 +13,9 @@ import { CoursesService } from './../services/courses.service';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+
   courses$: Observable<Course[]>;
-  displayedColumns = ['name', 'category', 'actions'];
+
 
   //coursesServices: CoursesService;
 
